@@ -23,8 +23,10 @@ const News =(props)=> {
     const url = `https:newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
     setLoading(true)
    props.setProgress(30);
-    let data = await fetch(url);
+    let data = await fetch(url)
     let parseData = await data.json();
+    // console.log(parseData);
+
    props.setProgress(60);
    setArticles(parseData.articles)
    setTotalResults(parseData.totalResults)
@@ -36,6 +38,7 @@ const News =(props)=> {
   useEffect(()=>{
      document.title = `News Feeder:-${capitalizer(props.category)}`
    updateNews();
+   // eslint-disable-next-line
   },[])
   
  
