@@ -9,7 +9,7 @@ const News =(props)=> {
 
 
  const[articles,setArticles]=useState([]);
- const [loading,setLoading]=useState(true);
+ const [loading,setLoading]=useState(false);//it value was true now update to check.
  const[page,setPage]=useState(1);
  const [totalResults,setTotalResults]=useState(0);
 
